@@ -104,7 +104,6 @@ class _LeftBarState extends State<LeftBar> with SingleTickerProviderStateMixin, 
             ),
             Expanded(
                 child: SingleChildScrollView(
-              physics: PageScrollPhysics(),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -498,8 +497,7 @@ class _LeftBarState extends State<LeftBar> with SingleTickerProviderStateMixin, 
                             padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(8), // color: contentTheme.primary.withAlpha(40),
-                                gradient: LinearGradient(
-                                    colors: const [Colors.deepPurple, Colors.lightBlue], begin: Alignment.topLeft, end: Alignment.bottomRight)),
+                                gradient: LinearGradient(colors: const [Colors.deepPurple, Colors.lightBlue], begin: Alignment.topLeft, end: Alignment.bottomRight)),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
@@ -549,8 +547,7 @@ class _LeftBarState extends State<LeftBar> with SingleTickerProviderStateMixin, 
                             padding: EdgeInsets.all(8),
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(4), // color: contentTheme.primary.withAlpha(40),
-                                gradient: LinearGradient(
-                                    colors: const [Colors.deepPurple, Colors.lightBlue], begin: Alignment.topLeft, end: Alignment.bottomRight)),
+                                gradient: LinearGradient(colors: const [Colors.deepPurple, Colors.lightBlue], begin: Alignment.topLeft, end: Alignment.bottomRight)),
                             child: Center(
                               child: Icon(
                                 LucideIcons.download,
