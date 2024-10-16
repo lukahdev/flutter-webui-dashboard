@@ -1,11 +1,11 @@
 {
-    "name": "temp",
-    "short_name": "temp",
+    "name": "Cheil MEA - Vendor Portal",
+    "short_name": "CMVP",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Cheil MEA Vendor Registration and Evaluation system",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [

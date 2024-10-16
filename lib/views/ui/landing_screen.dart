@@ -61,14 +61,14 @@ class _LandingScreenState extends State<LandingScreen>
                                 fit: BoxFit.cover,
                                 color: contentTheme.primary,
                               ),
-                              MySpacing.width(8),
-                              MyText.titleMedium(
-                                "WebUI",
-                                fontWeight: 600,
-                                fontSize: 24,
-                                letterSpacing: 2,
-                                color: contentTheme.primary,
-                              ),
+                              // MySpacing.width(8),
+                              // MyText.titleMedium(
+                              //   "WebUI",
+                              //   fontWeight: 600,
+                              //   fontSize: 24,
+                              //   letterSpacing: 2,
+                              //   color: contentTheme.primary,
+                              // ),
                             ],
                           ),
                           MySpacing.width(200),
@@ -140,30 +140,30 @@ class _LandingScreenState extends State<LandingScreen>
                             indicatorSize: TabBarIndicatorSize.tab,
                           ),
                           MySpacing.width(200),
-                          Row(
-                            children: [
-                              MyButton(
-                                onPressed: () {},
-                                elevation: 0,
-                                padding: MySpacing.xy(20, 16),
-                                backgroundColor: contentTheme.primary,
-                                borderRadiusAll: AppStyle.buttonRadius.medium,
-                                child: Row(
-                                  children: [
-                                    Icon(
-                                      LucideIcons.wallet_cards,
-                                      size: 20,
-                                    ),
-                                    MySpacing.width(8),
-                                    MyText.bodySmall(
-                                      "Purchase Now",
-                                      color: contentTheme.onPrimary,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          )
+                          // Row(
+                          //   children: [
+                          //     MyButton(
+                          //       onPressed: () {},
+                          //       elevation: 0,
+                          //       padding: MySpacing.xy(20, 16),
+                          //       backgroundColor: contentTheme.primary,
+                          //       borderRadiusAll: AppStyle.buttonRadius.medium,
+                          //       child: Row(
+                          //         children: [
+                          //           Icon(
+                          //             LucideIcons.wallet_cards,
+                          //             size: 20,
+                          //           ),
+                          //           MySpacing.width(8),
+                          //           MyText.bodySmall(
+                          //             "Purchase Now",
+                          //             color: contentTheme.onPrimary,
+                          //           ),
+                          //         ],
+                          //       ),
+                          //     ),
+                          //   ],
+                          // )
                         ],
                       ),
                       MySpacing.height(flexSpacing),
@@ -217,12 +217,12 @@ class _LandingScreenState extends State<LandingScreen>
                                       ),
                                       MySpacing.height(40),
                                       MyText.titleLarge(
-                                        "WebUI - Responsive Web UI Kit & Dashboard Template",
+                                        "CheilMEA - Vendor Portal",
                                         fontSize: 28,
                                       ),
                                       MySpacing.height(40),
                                       MyText.titleMedium(
-                                        "WebUI is a fully featured dashboard and admin template comes with tones of well designed UI elements, components, widgets and pages.",
+                                        "CheilMEA Vendor Portal is a cloud based vendor management system.",
                                       ),
                                       MySpacing.height(40),
                                       Row(
@@ -828,13 +828,13 @@ class _LandingScreenState extends State<LandingScreen>
                                         Images.logoIcon,
                                         height: 20,
                                       ),
-                                      MySpacing.width(8),
-                                      MyText.bodyMedium(
-                                        "WebUI",
-                                        color: contentTheme.light,
-                                        fontSize: 20,
-                                        fontWeight: 600,
-                                      ),
+                                      // MySpacing.width(8),
+                                      // MyText.bodyMedium(
+                                      //   "WebUI",
+                                      //   color: contentTheme.light,
+                                      //   fontSize: 20,
+                                      //   fontWeight: 600,
+                                      // ),
                                     ],
                                   ),
                                   MySpacing.height(20),
@@ -922,8 +922,8 @@ class _LandingScreenState extends State<LandingScreen>
                         ),
                         MySpacing.height(32),
                         MyText.bodyMedium(
-                          "© 2018 - 2023 WebUI. Design",
                           fontSize: 12,
+                          "© 2018 - 2023 WebUI. Design",
                           color: contentTheme.light,
                           muted: true,
                         )

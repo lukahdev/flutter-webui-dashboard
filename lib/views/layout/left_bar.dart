@@ -88,10 +88,10 @@ class _LeftBarState extends State<LeftBar> with SingleTickerProviderStateMixin, 
                   if (!widget.isCondensed)
                     Flexible(
                       fit: FlexFit.loose,
-                      child: MyText.labelLarge(
-                        "WebUi",
+                      child: MyText.labelSmall(
+                        "Vendor Portal",
                         style: GoogleFonts.raleway(
-                          fontSize: 28,
+                          // fontSize: 28,
                           fontWeight: FontWeight.w800,
                           color: contentTheme.primary,
                           letterSpacing: 1,
