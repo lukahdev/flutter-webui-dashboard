@@ -2,7 +2,7 @@ import 'dart:math';
 
 class Images {
   //----------------WebLogo----------------
-  static String logoIcon = 'assets/images/logo/logo_icon_dark.png';
+  static String logoIcon = './assets/images/logo/logo_icon_dark.png';
 
   static String ethLogoIcon = 'assets/images/logo/ethereum-eth-logo.png';
 
