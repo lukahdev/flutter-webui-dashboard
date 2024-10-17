@@ -81,7 +81,7 @@ class AuthLayout extends StatelessWidget {
     return Container(
       // borderRadiusAll: 0,
       decoration: BoxDecoration(
-        image: DecorationImage(image: AssetImage('./images/auth/background.jpg'), fit: BoxFit.fill, opacity: 0.75, ),
+        image: DecorationImage(image: AssetImage(Images.authBackground), fit: BoxFit.fill, opacity: 0.75, ),
         border: Border(
             // color: Colors.black, width: 16
           left: BorderSide(width: 1, color: Colors.grey),
