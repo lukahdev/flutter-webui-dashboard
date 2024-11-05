@@ -62,11 +62,12 @@ git status
 
 
 # Add all files and commit
-echo "Committing build files with message: $COMMIT_MESSAGE"
 git add .
+git status
+
 
 # Check for commit message argument
-echo "Please enter commit message"
+echo "Please enter commit message: "
 read COMMIT_MESSAGE
 if [ -z "$COMMIT_MESSAGE" ]; then
   echo "Error: No commit message provided."
