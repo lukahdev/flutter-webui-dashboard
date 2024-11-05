@@ -4,7 +4,7 @@ import 'package:webui/helper/services/auth_services.dart';
 
 class UserProvider extends ApiProvider {
 
-  Future<Response> login(Map data) => post("/login", data);
+  Future<Response> login(Map<String, dynamic>? data) => postData("/login", body: data);
 
   // Get request
   // Future<Response> login(String email, String password) => getData('/login.php/$id');

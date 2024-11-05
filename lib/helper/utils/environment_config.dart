@@ -1,3 +1,3 @@
 class EnvironmentConfig {
-  static const String env = String.fromEnvironment('ENV');
+  static const String env = String.fromEnvironment('ENVIRONMENT');
 }

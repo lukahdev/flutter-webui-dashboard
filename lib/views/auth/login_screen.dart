@@ -4,6 +4,7 @@ import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/instance_manager.dart';
 import 'package:flutter_lucide/flutter_lucide.dart';
 import 'package:webui/controller/auth/login_controller.dart';
+import 'package:webui/controller/ui/notification_controller.dart';
 import 'package:webui/helper/extensions/string.dart';
 import 'package:webui/helper/utils/ui_mixins.dart';
 import 'package:webui/helper/widgets/my_button.dart';
@@ -11,6 +12,7 @@ import 'package:webui/helper/widgets/my_spacing.dart';
 import 'package:webui/helper/widgets/my_text.dart';
 import 'package:webui/images.dart';
 import 'package:webui/views/layout/auth_layout.dart';
+import 'package:webui/views/layout/layout.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -22,10 +24,13 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen>
     with SingleTickerProviderStateMixin, UIMixin {
   late LoginController controller;
+  late NotificationController notificationController;
 
   @override
   void initState() {
-    controller = Get.put(LoginController());
+    notificationController = Get.put(NotificationController(this));
+    controller = Get.put(
+        LoginController(notificationController: notificationController));
     super.initState();
   }
 

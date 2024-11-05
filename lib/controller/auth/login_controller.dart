@@ -1,18 +1,24 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:webui/controller/my_controller.dart';
+import 'package:webui/controller/ui/notification_controller.dart';
 import 'package:webui/helper/services/auth_services.dart';
+import 'package:webui/helper/theme/admin_theme.dart';
 import 'package:webui/helper/widgets/my_form_validator.dart';
 import 'package:webui/helper/widgets/my_text_utils.dart';
 import 'package:webui/helper/widgets/my_validators.dart';
+import 'package:webui/models/error_data.dart';
 
 class LoginController extends MyController {
-  MyFormValidator basicValidator = MyFormValidator();
-  List<String> dummyTexts =
-      List.generate(12, (index) => MyTextUtils.getDummyText(60));
-  int selectTime = 1;
+  late NotificationController? notificationController;
 
+  MyFormValidator basicValidator = MyFormValidator();
+  int selectTime = 1;
   bool showPassword = false, isChecked = false;
+
+  LoginController({this.notificationController});
 
   @override
   void onInit() {
@@ -50,21 +56,27 @@ class LoginController extends MyController {
       update();
       var errors = await AuthService.loginUser(basicValidator.getData());
       if (errors != null) {
-        basicValidator.addErrors(errors);
-        basicValidator.validateForm();
-        basicValidator.clearErrors();
+        print("[LoginScreen] ERR: ${(jsonEncode(errors))}");
+        if (errors.containsKey('notify')) {
+          onError(error: ErrorData.fromJson(errors));
+        } else {
+          basicValidator.addErrors(errors);
+          basicValidator.validateForm();
+          basicValidator.clearErrors();
+        }
       } else {
-        String nextUrl =
-            Uri.parse(ModalRoute.of(Get.context!)?.settings.name ?? "")
-                    .queryParameters['next'] ??
-                "/dashboard";
-        Get.toNamed(
-          nextUrl,
-        );
+        print("[LoginScreen] SUCCESS");
+        Get.toNamed(getNextUrl());
       }
 
       update();
     }
+  }
+
+  String getNextUrl() {
+    return Uri.parse(ModalRoute.of(Get.context!)?.settings.name ?? "")
+            .queryParameters['next'] ??
+        "/dashboard";
   }
 
   void goToForgotPassword() {
@@ -73,5 +85,12 @@ class LoginController extends MyController {
 
   void gotoRegister() {
     Get.offAndToNamed('/auth/sign_up');
+  }
+
+  void onError({bool isBanner = true, required ErrorData error}) {
+    notificationController?.showBanner = isBanner;
+    notificationController?.onChangeColor(ContentThemeColor.red);
+    notificationController?.toastTitleController.text = error.message;
+    notificationController?.show();
   }
 }

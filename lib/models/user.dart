@@ -1,9 +1,11 @@
+import 'dart:convert';
+
 class User {
   final String uid;
   final String email;
   final String password;
   final String authTypeId;
-  final int isActive;
+  final int isActivated;
   final String createdAt;
 
   User({
@@ -11,7 +13,7 @@ class User {
     required this.email,
     required this.password,
     required this.authTypeId,
-    required this.isActive,
+    required this.isActivated,
     required this.createdAt,
   });
 
@@ -21,7 +23,7 @@ class User {
       email: json['email'],
       password: json['password'],
       authTypeId: json['auth_type_id'],
-      isActive: json['is_active'],
+      isActivated: json['is_activated'],
       createdAt: json['created_at'],
     );
   }
@@ -32,8 +34,12 @@ class User {
       'email': email,
       'password': password,
       'auth_type_id': authTypeId,
-      'is_active': isActive,
+      'is_activated': isActivated,
       'created_at': createdAt,
     };
+  }
+
+  String toJsonString() {
+    return jsonEncode(toJson());
   }
 }

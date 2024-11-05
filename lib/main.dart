@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
           darkTheme: AppTheme.darkTheme,
           themeMode: ThemeCustomizer.instance.theme,
           navigatorKey: NavigationService.navigatorKey,
-          initialRoute: "/dashboard",
+          initialRoute: "/auth/login",
           getPages: getPageRoute(),
           builder: (context, child) {
             NavigationService.registerContext(context);

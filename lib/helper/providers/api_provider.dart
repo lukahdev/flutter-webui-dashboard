@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:get/get.dart';
 import 'package:webui/helper/utils/environment_config.dart';
 
@@ -26,25 +28,31 @@ class ApiProvider extends GetConnect {
     }
   }
 
-  // Future<Response> postData(String endpoint, Map<String, dynamic> data) async {
-  //   final String url = Uri.parse('$_baseUrl$endpoint').toString();
-  //
-  //   try {
-  //     final response = await post(
-  //       url,
-  //       headers: <String, String>{
-  //         'Content-Type': 'application/json; charset=UTF-8',
-  //       },
-  //       body: jsonEncode(data), // Converts map to JSON string
-  //     );
-  //
-  //     if (response.statusCode == 200 || response.statusCode == 201) {
-  //       return response;
-  //     } else {
-  //       throw Exception('Failed to post data');
-  //     }
-  //   } catch (error) {
-  //     throw Exception('Failed to connect to server: $error');
-  //   }
-  // }
+  Future<Response> postData(String endpoint,
+      {Map<String, dynamic>? body}) async {
+
+
+    // Construct the full URL
+    final url = Uri.parse('$_baseUrl$endpoint').toString();
+
+    try {
+      // Make the POST request
+      final response = await post(
+        url,
+        jsonEncode(body), // Encode the body to JSON,
+        contentType: 'application/json',
+        headers: {
+          'Content-Type': 'application/json', // Set content type for JSON
+        },
+      );
+
+      if (response.statusCode == 200 || response.statusCode == 201) {
+        return response;
+      } else {
+        throw Exception('Failed to post data: ${response.statusCode}');
+      }
+    } catch (error) {
+      throw Exception('Failed to connect to server: $error');
+    }
+  }
 }

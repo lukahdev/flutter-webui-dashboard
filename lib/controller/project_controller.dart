@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 import 'package:webui/controller/my_controller.dart';
+import 'package:webui/helper/storage/local_storage.dart';
+import 'package:webui/models/user.dart';
 
 class ChartSampleData {
   ChartSampleData(
@@ -47,6 +49,13 @@ class ProjectController extends MyController {
   int selectTime = 1;
   String selectedDailyTask = "Today";
   String selectedTeamMember = "Active";
+
+  @override
+  void onInit() {
+    super.onInit();
+    User user = LocalStorage.getLoggedInUserData();
+    // print("loggedInUser.id=${user.authTypeId}");
+  }
 
   void select(int select) {
     selectTime = select;

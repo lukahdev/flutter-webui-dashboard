@@ -1,7 +1,10 @@
+import 'dart:convert';
+
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:webui/helper/localization/language.dart';
 import 'package:webui/helper/services/auth_services.dart';
 import 'package:webui/helper/theme/theme_customizer.dart';
+import 'package:webui/models/user.dart';
 
 class LocalStorage {
   static const String _loggedInUserKey = "user";
@@ -33,8 +36,16 @@ class LocalStorage {
     return preferences.setBool(_loggedInUserKey, loggedIn);
   }
 
-  static Future<bool> setLoggedInUserData(bool loggedIn) async {
-    return preferences.setString(_loggedInUserDataKey, loggedIn.toString());
+  // static Future<bool> setLoggedInUserData(bool loggedIn) async {
+  //   return preferences.setString(_loggedInUserDataKey, loggedIn.toString());
+  // }
+
+  static Future<bool> setLoggedInUserData(User authUserData) async {
+    return preferences.setString(_loggedInUserDataKey, authUserData.toJsonString());
+  }
+
+  static User getLoggedInUserData() {
+    return User.fromJson(jsonDecode(preferences.getString(_loggedInUserDataKey)!));
   }
 
   static Future<bool> setCustomizer(ThemeCustomizer themeCustomizer) {
