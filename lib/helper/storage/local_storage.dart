@@ -5,6 +5,7 @@ import 'package:webui/helper/theme/theme_customizer.dart';
 
 class LocalStorage {
   static const String _loggedInUserKey = "user";
+  static const String _loggedInUserDataKey = "user_data";
   static const String _themeCustomizerKey = "theme_customizer";
   static const String _languageKey = "lang_code";
 
@@ -30,6 +31,10 @@ class LocalStorage {
 
   static Future<bool> setLoggedInUser(bool loggedIn) async {
     return preferences.setBool(_loggedInUserKey, loggedIn);
+  }
+
+  static Future<bool> setLoggedInUserData(bool loggedIn) async {
+    return preferences.setString(_loggedInUserDataKey, loggedIn.toString());
   }
 
   static Future<bool> setCustomizer(ThemeCustomizer themeCustomizer) {

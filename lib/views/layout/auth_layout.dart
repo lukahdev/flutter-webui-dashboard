@@ -58,7 +58,7 @@ class AuthLayout extends StatelessWidget {
             Expanded(child: Container(
               padding: MySpacing.x(300),
               child: child,)),
-            buildImage()
+            //buildImage()
           ],
         ),
 

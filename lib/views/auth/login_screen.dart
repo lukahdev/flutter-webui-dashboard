@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/instance_manager.dart';
@@ -37,7 +38,6 @@ class _LoginScreenState extends State<LoginScreen>
           return Form(
             key: controller.basicValidator.formKey,
             child: Column(
-              // mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -47,11 +47,12 @@ class _LoginScreenState extends State<LoginScreen>
                     children: [
                       Image.asset(
                         Images.logoIcon,
-                        height: 32,
+                        height: 28,
                         alignment: Alignment.center,
                       ),
                       MyText.bodyLarge(
-                        'WEBUI',
+                        'Vendor Portal',
+                        color: CupertinoColors.activeBlue,
                         fontSize: 30,
                         textAlign: TextAlign.center,
                         fontWeight: 600,
@@ -71,7 +72,7 @@ class _LoginScreenState extends State<LoginScreen>
                         fontSize: 24,
                       ),
                       MyText.bodySmall(
-                        "Login your account",
+                        "Login to your account",
                         fontSize: 14,
                         muted: true,
                       ),
@@ -159,31 +160,31 @@ class _LoginScreenState extends State<LoginScreen>
                       MySpacing.height(20),
                       MyButton.outlined(
                         borderColor: contentTheme.primary,
-                        onPressed: () {},
+                        onPressed: controller.gotoRegister,
                         elevation: 0,
                         splashColor: contentTheme.secondary.withOpacity(0.1),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Image.asset(Images.googleLogo),
+                            Image.asset(Images.vendorLogo),
                             MySpacing.width(12),
                             MyText.labelMedium(
-                              'Continue with Google',
+                              'Create a Vendor Account',
                               color: contentTheme.secondary,
                             ),
                           ],
                         ),
                       ),
-                      MySpacing.height(16),
-                      Center(
-                        child: MyButton.text(
-                            onPressed: controller.gotoRegister,
-                            padding: MySpacing.xy(8, 4),
-                            child: MyText.bodyMedium(
-                              "Don't have an account",
-                              fontWeight: 600,
-                            )),
-                      )
+                      // MySpacing.height(16),
+                      // Center(
+                      //   child: MyButton.text(
+                      //       onPressed: controller.gotoRegister,
+                      //       padding: MySpacing.xy(8, 4),
+                      //       child: MyText.bodyMedium(
+                      //         "Don't have a Vendor account",
+                      //         fontWeight: 600,
+                      //       )),
+                      // )
                     ],
                   ),
                 )

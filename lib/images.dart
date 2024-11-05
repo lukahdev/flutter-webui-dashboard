@@ -5,11 +5,12 @@ class Images {
   static String authBackground = './images/auth/background.jpg';
 
   //----------------WebLogo----------------
-  static String logoIcon = 'assets/images/logo/logo_icon_dark.png';
+  static String logoIcon = 'assets/images/logo/cheil_namelogo.png';
 
   static String ethLogoIcon = 'assets/images/logo/ethereum-eth-logo.png';
 
   static String googleLogo = 'assets/images/dummy/google.png';
+  static String vendorLogo = 'assets/images/logo/vendor_portal_icon.png';
 
   //----------------Dummy Images----------------
 
