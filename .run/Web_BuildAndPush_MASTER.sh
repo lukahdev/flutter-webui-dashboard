@@ -7,8 +7,8 @@ set -e
 
 
 # Define variables
-SOURCE_BRANCH="stage"      # or your main development branch
-DEPLOY_BRANCH="stage"      # the branch you want to use for deployment
+SOURCE_BRANCH="master"      # or your main development branch
+DEPLOY_BRANCH="master"      # the branch you want to use for deployment
 REPO_URL="git@github.com:cheil-vendor-portal/VendorPortal_APP.git"  # replace with your actual repository URL
 
 #====================================================================================
